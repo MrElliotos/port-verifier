@@ -1,13 +1,13 @@
 allowed_ports = [22, 80, 443, 8080]
-def check_port(port):
-    if port in allowed_ports :
+def check_port(allowedlist, port):
+    if port in allowedlist :
         print(f"[+] Port {port} is open and secure")
     else:
         print(f"[!] ATTENTION: Port {port} is closed or considered suspicious!")
 print("=== Network port scanner ===")
 try :
     muno = int(input("write the port number "))
-    check_port(muno)
+    check_port(allowed_ports, muno)
 except ValueError:
     print("Please enter numbers, not letters")
 else:
